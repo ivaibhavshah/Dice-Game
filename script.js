@@ -4,13 +4,14 @@
 
 const player0N = prompt("Please name of Player 1", "Player 1");
 const player1N = prompt("Please name of Player 2", "Player 2");
+document.querySelector('#name--0').textContent = player0N;
+document.querySelector('#name--1').textContent = player1N;
 
 const score0El = document.getElementById('score--0');
 const score1El = document.getElementById('score--1');
 const diceEl = document.querySelector('.dice');
 
-document.querySelector('#name--0').textContent = player0N;
-document.querySelector('#name--1').textContent = player1N;
+
 
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
