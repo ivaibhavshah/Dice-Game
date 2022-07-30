@@ -19,20 +19,20 @@ const player1El = document.querySelector('.player--1');
 // to make score zero on reloading page 
 score0El.textContent = 0;
 score1El.textContent = 0;
-let currentScore =0;
+let currentScore = 0;
 let activeplayer = 0;
 let playing = true;
-const scores = [0,0];
+let scores = [0,0];
 // to hide the dice in the web
 // This syntax will add class name to dice class in html
 diceEl.classList.add('hidden');
 
 
-const switchplayer = function(){
-    document.getElementById(`score--${activeplayer}`).textContent = currentScore ;
+const switchplayer = function() {
+    document.getElementById(`score--${activeplayer}`).textContent = scores[activeplayer] ;
     document.getElementById(`current--${activeplayer}`).textContent = 0;
     currentScore = 0;
-    activeplayer = activeplayer === 0?1 :0;
+    activeplayer = activeplayer === 0 ? 1 :0;
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('player--active');
 }
@@ -61,7 +61,9 @@ if(playing == true){
     else
     {
         // Switch players
+        scores[activeplayer]=0;
         switchplayer();
+        
       
     }
 
@@ -75,7 +77,7 @@ btnHold.addEventListener('click', function() {
     
     document.getElementById(`score--${activeplayer}`).textContent = scores[activeplayer];
     
-   
+//    console.log(scores);
     
     // finishes the game
     if(scores[activeplayer]>= 50)
